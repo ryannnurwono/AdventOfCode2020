@@ -1,0 +1,9 @@
+def function():
+	di=[]
+	while True:
+		val=int(input())
+		if (2000-val) in di:
+			return ((2000-val)*val)
+		else:
+			di.append(val)
+print(function())
