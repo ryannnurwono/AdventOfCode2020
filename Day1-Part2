@@ -1,0 +1,21 @@
+import sys
+def function():
+    di=[]
+    for line in sys.stdin:
+        val=int(line)
+        di.append(val)
+    di.sort()
+    print(len(di))
+    for i in range(len(di)-1):
+        num=di[i]
+        target=2020-num
+        low=i+1
+        high=len(di)-1
+        while low<high:
+            if target==(di[low]+di[high]):
+                return (num*di[low]*di[high])
+            elif target>(di[low]+di[high]):
+                low+=1
+            elif target<(di[low]+di[high]):
+                high-=1
+print(function())
