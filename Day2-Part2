@@ -1,0 +1,17 @@
+import sys
+def function():
+  correct_passwords=0
+  for line in sys.stdin:
+    lis=line.split(" ")
+    a=lis[0]
+    count=a.split("-")
+    letter=lis[1][0]
+    counter=0
+    if lis[2][int(count[0])-1]==letter:
+      counter+=1
+    if lis[2][int(count[1])-1]==letter:
+      counter+=1
+    if counter==1:
+      correct_passwords+=1
+  return correct_passwords
+print(function())
