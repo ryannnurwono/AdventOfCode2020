@@ -1,8 +1,8 @@
 import sys
-slot1=slot5=slot7=slot2=0
+slot=0
 trees=0
 for line in sys.stdin:
 	if line[slot%(len(line)-1)]=="#":
 		trees+=1
-	slot+=3
+	slot+=1
 print(trees)
