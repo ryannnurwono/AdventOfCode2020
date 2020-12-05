@@ -1,0 +1,25 @@
+import sys
+di={1:[0,0], 3:[0,0], 5:[0,0], 7:[0,0]}
+slot2=0
+line_count=0
+slot2_count=0
+for line in sys.stdin:
+  for num in di:
+    if line[(di[num][0])%(len(line)-1)]=="#":
+      di[num][1]=di[num][1]+1
+    di[num][0]+=num
+  if line_count%2==0:
+    if line[(slot2)%(len(line)-1)]=="#":
+      slot2_count+=1
+    slot2+=1
+  line_count+=1
+total_trees=1
+for num in di:
+  total_trees*=di[num][1]
+total_trees*=slot2_count
+print(total_trees)
+print(di[1][1])
+print(di[3][1])
+print(di[5][1])
+print(di[7][1])
+print(slot2_count)
