@@ -1,0 +1,14 @@
+import sys
+passport=""
+count=0
+for line in sys.stdin:
+  if len(line)==1:
+    val=passport.count(':')
+    if 'cid' in passport:
+      val-=1
+    if val==7:
+      count+=1
+    passport=""
+  else:
+    passport+=line
+print(count)
